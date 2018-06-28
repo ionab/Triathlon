@@ -14,7 +14,7 @@ class Main extends Component {
       ranking: null,
       athletes: null,
     }
-}
+  }
 
 // componentDidMount(){
 //   const eventsUrl = "";
