@@ -27,8 +27,18 @@ class Main extends Component {
       mode: "cors"
       }).then(res => res.json())
         .then(data => this.setState({events: data}))
-    // const rankingUrl = "";
-    // fetch(rankingUrl).then(res => res.json()).then(data => this.setState({ranking: data.results}))
+    const rankingUrl = "https://api.triathlon.org/v1/rankings";
+    fetch(rankingUrl, {
+      credentials: 'same-origin',
+      headers: {
+        apikey: "f199550ffbfc27ac32747b2258e49294",
+        "content-type": "application/json"
+      },
+      mode: "cors"
+      }).then(res => res.json())
+        .then(data => this.setState({ranking: data}))
+
+
     const athletesUrl = "https://api.triathlon.org/v1/athletes?per_page=100";
     fetch(athletesUrl, {
       credentials: 'same-origin',
