@@ -1,13 +1,15 @@
 import React from 'react';
+import RankingDetails from '../components/RankingDetails.js'
 
 const Ranking = (props) => {
+  console.log(props.ranking);
   if (!props.ranking) return null;
-  console.log('in here');
+  const allRankings = props.ranking.data.map(ranking =>
+    <RankingDetails details={ranking}/>
+  )
   return (
   <div>
-  <h1>This is the Rankings homepage</h1>
-
-  {console.log(props.ranking.data)}
+    {allRankings}
   </div>
   )
 };
