@@ -16,14 +16,14 @@ class Main extends Component {
     }
   }
 
-// componentDidMount(){
-//   const eventsUrl = "";
-//   const rankingUrl = "";
-//   const athletesUrl = "";
-//   fetch(eventsUrl).then(res => res.json()).then(data => this.setState({events: data.results}))
-//   fetch(rankingUrl).then(res => res.json()).then(data => this.setState({ranking: data.results}))
-//   fetch(athletesUrl).then(res => res.json()).then(data => this.setState({athletes: data.results}))
-// }
+  componentDidMount(){
+    const eventsUrl = "";
+    const rankingUrl = "";
+    const athletesUrl = "";
+    fetch(eventsUrl).then(res => res.json()).then(data => this.setState({events: data.results}))
+    fetch(rankingUrl).then(res => res.json()).then(data => this.setState({ranking: data.results}))
+    fetch(athletesUrl).then(res => res.json()).then(data => this.setState({athletes: data.results}))
+  }
 
   render() {
     return (
