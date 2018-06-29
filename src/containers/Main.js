@@ -12,20 +12,37 @@ class Main extends Component {
     this.state ={
       events: null,
       ranking: null,
-      athletes: null,
+      athletes: []
     }
   }
 
   componentDidMount(){
-    const eventsUrl = "";
-    const rankingUrl = "";
-    const athletesUrl = "";
-    fetch(eventsUrl).then(res => res.json()).then(data => this.setState({events: data.results}))
-    fetch(rankingUrl).then(res => res.json()).then(data => this.setState({ranking: data.results}))
-    fetch(athletesUrl).then(res => res.json()).then(data => this.setState({athletes: data.results}))
+    const eventsUrl = "https://api.triathlon.org/v1/events";
+    fetch(eventsUrl, {
+      credentials: 'same-origin',
+      headers: {
+        apikey: "f199550ffbfc27ac32747b2258e49294",
+        "content-type": "application/json"
+      },
+      mode: "cors"
+      }).then(res => res.json())
+        .then(data => this.setState({events: data}))
+    // const rankingUrl = "";
+    // fetch(rankingUrl).then(res => res.json()).then(data => this.setState({ranking: data.results}))
+    const athletesUrl = "https://api.triathlon.org/v1/athletes?per_page=100";
+    fetch(athletesUrl, {
+      credentials: 'same-origin',
+      headers: {
+        apikey: "f199550ffbfc27ac32747b2258e49294",
+        "content-type": "application/json"
+      },
+      mode: "cors"
+      }).then(res => res.json())
+        .then(data => this.setState({athletes: data}))
   }
 
   render() {
+    console.log(this.state.events);
     return (
       <Router>
         <React.Fragment>
