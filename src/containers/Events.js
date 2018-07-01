@@ -1,5 +1,5 @@
 import React from 'react';
-// import EventMap from "../components/eventMap.js"
+import EventMap from "../components/eventMap.js"
 import Event from '../components/event.js'
 
 const Events = (props) => {
@@ -8,11 +8,14 @@ const Events = (props) => {
     <Event event={event} />
   )
   return (
-  <div>
-  <h1>This is the Events homepage</h1>
-  {allEvents}
-  {console.log(props.events.data)}
-  </div>
+    <div>
+      <h1>This is the Events homepage</h1>
+      {allEvents}
+      {console.log(props.events.data)}
+      <div id="map">
+        {/* <EventMap /> */}
+      </div>
+    </div>
   )
 };
 export default Events;
