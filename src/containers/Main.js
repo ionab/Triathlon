@@ -17,7 +17,7 @@ class Main extends Component {
   }
 
   componentDidMount(){
-    const eventsUrl = "https://api.triathlon.org/v1/events";
+    const eventsUrl = "https://api.triathlon.org/v1/events?per_page=200&start_date=2018-01-01&end_date=2022-01-01&region_id=10";
     fetch(eventsUrl, {
       credentials: 'same-origin',
       headers: {

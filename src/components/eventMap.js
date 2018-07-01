@@ -8,9 +8,9 @@ class EventMap extends React.Component {
  constructor(props) {
    super(props)
    this.state = {
-     lat: 51.505,
-     lng: -0.09,
-     zoom: 4
+     lat: 49.460983,
+     lng: 11.061859,
+     zoom: 3.5
    }
  }
 
@@ -26,7 +26,16 @@ class EventMap extends React.Component {
        {allEventPopup = this.props.allEvents.map(event =>
          <Marker position={[event.event_latitude, event.event_longitude]}>
            <Popup>
-             <p>{event.event_country}</p>
+             <div>
+             <p>{event.event_title}</p>
+             <p>{event.event_date}</p>
+             <p>{event.event_venue}</p>
+             <img src={event.event_flag}/>
+             <div id="heart">
+               <button id="heart-button"></button>
+             </div>
+             </div>
+
            </Popup>
          </Marker>
        )}

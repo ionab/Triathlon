@@ -10,11 +10,12 @@ const Events = (props) => {
   return (
     <div>
       <h1>This is the Events homepage</h1>
-      {allEvents}
+
       {console.log(props.events.data)}
       <div id="map">
         <EventMap allEvents={props.events.data} />
       </div>
+      {allEvents}
     </div>
   )
 };
