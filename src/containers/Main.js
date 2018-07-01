@@ -5,6 +5,8 @@ import Ranking from "./Ranking";
 import Athletes from "./Athletes";
 import NavBar from "./NavBar";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+const Request = require('../services/request.js');
+
 
 class Main extends Component {
   constructor(props){
@@ -17,6 +19,9 @@ class Main extends Component {
   }
 
   componentDidMount(){
+
+    const requestToMongodb = new Request('http://localhost:3000/');
+
     const eventsUrl = "https://api.triathlon.org/v1/events?per_page=200&start_date=2018-01-01&end_date=2022-01-01&region_id=10";
     fetch(eventsUrl, {
       credentials: 'same-origin',
