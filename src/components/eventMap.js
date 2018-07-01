@@ -4,34 +4,34 @@ import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import './eventMap.css'
 
 class EventMap extends React.Component {
- constructor() {
-   super()
+
+ constructor(props) {
+   super(props)
    this.state = {
      lat: 51.505,
      lng: -0.09,
-     zoom: 13
+     zoom: 1
    }
  }
-
  render() {
    const position = [this.state.lat, this.state.lng];
+   let allEventPopup;
    return (
      <Map center={position} zoom={this.state.zoom}>
        <TileLayer
          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
          url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
        />
-       <Marker position={position}>
-         <Popup>
-           <span>A pretty CSS3 popup. <br/> Easily customizable.</span>
-         </Popup>
-       </Marker>
+       {allEventPopup = this.props.allEvents.map(event =>
+         <Marker position={[event.event_latitude, event.event_longitude]}>
+           <Popup>
+             <p>{event.event_country}</p>
+           </Popup>
+         </Marker>
+       )}
      </Map>
    );
  }
 }
-
-
-// ReactDOM.render(<EventMap/>, document.getElementById('container'))
 
 export default EventMap;

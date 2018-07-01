@@ -13,7 +13,7 @@ const Events = (props) => {
       {allEvents}
       {console.log(props.events.data)}
       <div id="map">
-        <EventMap />
+        <EventMap allEvents={props.events.data} />
       </div>
     </div>
   )
