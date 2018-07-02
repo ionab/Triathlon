@@ -1,20 +1,18 @@
 import React from 'react';
-import Favourite from '../components/Favourite';
+import Favourite from '../components/Favourite.js';
 
 const Favourites = (props) => {
-  if (props.favourites.length === 0) return null;
+  if (!props.favourites) return null;
   const allFavourites = props.favourites.map(favourite =>
       <Favourite favourite={favourite} />
      )
   return (
   <div>
+      {console.log(props)}
     <h1>Fav list</h1>
-  <ul>
-    {allFavourites}
-  </ul>
+    <ul>{allFavourites}</ul>
   </div>
   )
-
 };
 
 export default Favourites;

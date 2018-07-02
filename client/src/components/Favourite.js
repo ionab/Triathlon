@@ -1,10 +1,9 @@
 import React from "react";
 
-
 const Favourite = function(props){
   return(
     <div>
-      <p>{props.favourites.name}</p>
+      <p>{props}</p>
     </div>
 
       )
