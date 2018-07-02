@@ -25,13 +25,14 @@ MongoClient.connect(
     });
 
     app.post("/api/favourites", (req, res, next) => {
+      console.log("hello");
       const favouritesCollection = db.collection("favourites");
       console.log(req.body);
       const newFavourite = req.body;
       favouritesCollection.insert(newFavourite, (err, result) => {
         if (err) next(err);
         res.status(201);
-        res.json(result.ops[0]);
+        // res.json(result.ops[0]);
       });
     });
 
