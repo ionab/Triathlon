@@ -13,22 +13,22 @@ MongoClient.connect(
   "mongodb://localhost:27017",
   (err, client) => {
     if (err) next(err);
-    const db = client.db("favoritesDB");
+    const db = client.db("favouritesDB");
     console.log("Connected to db...");
 
-    app.get("/api/favorites", (req, res, next) => {
-      const favoritesCollection = db.collection("favorites");
-      favoritesCollection.find().toArray((err, favorites) => {
+    app.get("/api/favourites", (req, res, next) => {
+      const favouritesCollection = db.collection("favourites");
+      favouritesCollection.find().toArray((err, favourites) => {
         if (err) next(err);
-        res.json(favorites);
+        res.json(favourites);
       });
     });
 
-    app.post("/api/favorites", (req, res, next) => {
-      const favoritesCollection = db.collection("favorites");
+    app.post("/api/favourites", (req, res, next) => {
+      const favouritesCollection = db.collection("favourites");
       console.log(req.body);
-      const newFavorite = req.body;
-      favoritesCollection.insert(newFavorite, (err, result) => {
+      const newFavourite = req.body;
+      favouritesCollection.insert(newFavourite, (err, result) => {
         if (err) next(err);
         res.status(201);
         res.json(result.ops[0]);
