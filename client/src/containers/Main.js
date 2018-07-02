@@ -4,6 +4,7 @@ import Events from "./Events";
 import Ranking from "./Ranking";
 import Athletes from "./Athletes";
 import NavBar from "./NavBar";
+import Favourites from "./Favourites";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 
@@ -14,13 +15,18 @@ class Main extends Component {
     this.state ={
       events: null,
       ranking: null,
-      athletes: []
+      athletes: [],
+      favourites: []
     }
   }
 
   componentDidMount(){
-
-
+    const MongoUrl = 'http://localhost:3001/api/favourites';
+    fetch(MongoUrl).then(res => res.json()).then(favourites => this.setState(
+      {
+        favourites: favourites
+      }
+    ))
 
     const eventsUrl = "https://api.triathlon.org/v1/events?per_page=200&start_date=2018-01-01&end_date=2022-01-01&region_id=10";
     fetch(eventsUrl, {
@@ -30,8 +36,8 @@ class Main extends Component {
         "content-type": "application/json"
       },
       mode: "cors"
-      }).then(res => res.json())
-        .then(data => this.setState({events: data}))
+    }).then(res => res.json())
+    .then(data => this.setState({events: data}))
     const rankingUrl = "https://api.triathlon.org/v1/rankings";
     fetch(rankingUrl, {
       credentials: 'same-origin',
@@ -40,8 +46,8 @@ class Main extends Component {
         "content-type": "application/json"
       },
       mode: "cors"
-      }).then(res => res.json())
-        .then(data => this.setState({ranking: data}))
+    }).then(res => res.json())
+    .then(data => this.setState({ranking: data}))
 
 
     const athletesUrl = "https://api.triathlon.org/v1/athletes?per_page=100";
@@ -52,8 +58,8 @@ class Main extends Component {
         "content-type": "application/json"
       },
       mode: "cors"
-      }).then(res => res.json())
-        .then(data => this.setState({athletes: data}))
+    }).then(res => res.json())
+    .then(data => this.setState({athletes: data}))
   }
 
   render() {
@@ -62,23 +68,27 @@ class Main extends Component {
       <Router>
         <React.Fragment>
           <NavBar />
-          <Route exact path="/" component={Home}/>
-          <Route path="/events"
+            <Route exact path="/" component={Home}/>
+            <Route path="/events"
             render={() => <Events events={this.state.events}
             />}
-          />
-          <Route path="/ranking"
-          render={() => <Ranking ranking={this.state.ranking}
+            />
+            <Route path="/ranking"
+            render={() => <Ranking ranking={this.state.ranking}
             />}
-          />
-          <Route path="/athletes"
-          render={() => <Athletes athletes={this.state.athletes}
+            />
+            <Route path="/athletes"
+            render={() => <Athletes athletes={this.state.athletes}
             />}
-          />
-        </React.Fragment>
-      </Router>
-    );
-  }
+            />
+            <Route path="/favourites"
+            render={() => <Favourites favourites={this.state.favourites}
+            />}
+            />
+          </React.Fragment>
+        </Router>
+      );
+    }
 }
 
 export default Main;

@@ -3,6 +3,8 @@ import React from 'react'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import './eventMap.css'
 
+
+
 class EventMap extends React.Component {
 
  constructor(props) {
