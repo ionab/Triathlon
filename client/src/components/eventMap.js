@@ -20,11 +20,11 @@ class EventMap extends React.Component {
  // const createAddButton = document.querySelector("#heart-button");
  // createAddButton.addEventListener('click', handleAddButtonClick);
 
-  handleAddButtonClick(event){
-const eventObject = JSON.parse(event.target.value);
-   console.log("button clicked");
-   console.log(eventObject.event_title);
- }
+//   handleAddButtonClick(event){
+// const eventObject = JSON.parse(event.target.value);
+//
+//
+//  }
 
  render() {
    const position = [this.state.lat, this.state.lng];
@@ -44,7 +44,7 @@ const eventObject = JSON.parse(event.target.value);
              <p>{event.event_venue}</p>
              <img src={event.event_flag}/>
              <div id="heart">
-               <button onClick={this.handleAddButtonClick} id="heart-button" value={JSON.stringify(event)}>favourite button</button>
+               <button onClick={this.props.handleAddButtonClick} id="heart-button" value={JSON.stringify(event)}>favourite button</button>
              </div>
              </div>
 
