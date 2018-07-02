@@ -2,6 +2,7 @@ import React from 'react';
 import Favourite from '../components/Favourite.js';
 
 const Favourites = (props) => {
+console.log(props, "props");
   if (!props.favourites) return null;
   const allFavourites = props.favourites.map(favourite =>
       <Favourite favourite={favourite} />

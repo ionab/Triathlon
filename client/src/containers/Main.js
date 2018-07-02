@@ -22,7 +22,9 @@ class Main extends Component {
 
   componentDidMount(){
     const MongoUrl = 'http://localhost:3001/api/favourites';
-    fetch(MongoUrl).then(res => res.json()).then(favourites => this.setState(
+    fetch(MongoUrl, {
+      mode: "cors"
+    }).then(res => res.json()).then(favourites => this.setState(
       {
         favourites: favourites
       }
@@ -63,7 +65,7 @@ class Main extends Component {
   }
 
   render() {
-    console.log(this.state.events);
+    // console.log(this.state.events);
     return (
       <Router>
         <React.Fragment>
