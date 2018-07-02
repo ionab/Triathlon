@@ -6,6 +6,8 @@ import Athletes from "./Athletes";
 import NavBar from "./NavBar";
 import Favourites from "./Favourites";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+// import eventMap from "./eventMap";
+
 
 
 
@@ -64,33 +66,41 @@ class Main extends Component {
     .then(data => this.setState({athletes: data}))
   }
 
+
   render() {
     // console.log(this.state.events);
     return (
       <Router>
         <React.Fragment>
           <NavBar />
-            <Route exact path="/" component={Home}/>
-            <Route path="/events"
-            render={() => <Events events={this.state.events}
-            />}
-            />
-            <Route path="/ranking"
-            render={() => <Ranking ranking={this.state.ranking}
-            />}
-            />
-            <Route path="/athletes"
-            render={() => <Athletes athletes={this.state.athletes}
-            />}
-            />
-            <Route path="/favourites"
-            render={() => <Favourites favourites={this.state.favourites}
-            />}
-            />
-          </React.Fragment>
-        </Router>
-      );
-    }
+          <Route exact path="/" component={Home}/>
+          <Route path="/events"
+          render={() => <Events events={this.state.events}
+          />}
+        />
+        <Route path="/ranking"
+        render={() => <Ranking ranking={this.state.ranking}
+        />}
+      />
+      <Route path="/athletes"
+      render={() => <Athletes athletes={this.state.athletes}
+      />}
+    />
+    <Route path="/favourites"
+    render={() => <Favourites favourites={this.state.favourites}
+    />}
+  />
+</React.Fragment>
+</Router>
+);
 }
+
+
+
+}
+
+
+
+
 
 export default Main;
