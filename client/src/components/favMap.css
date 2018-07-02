@@ -1,0 +1,12 @@
+#map {
+  height: 600px;
+}
+
+#container{
+  height: 700px;
+  width: 100%;
+}
+
+.leaflet-container {
+  height: 100%;
+}
