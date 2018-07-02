@@ -20,6 +20,7 @@ class Main extends Component {
       athletes: [],
       favourites: []
     }
+
   }
 
   componentDidMount(){
@@ -71,6 +72,12 @@ class Main extends Component {
   handleEventSelect(event){
     const eventObject = JSON.parse(event.target.value);
     console.log("in handle event select", eventObject.event_title);
+    // const result = [{event: eventObject}];
+    const request = new XMLHttpRequest();
+    request.open('POST', 'http://localhost:3001/api/favourites', true)
+    request.setRequestHeader("Content-type", 'application/json')
+    request.send(JSON.stringify(eventObject))
+    
     // part1
     // write the event object to the data base.
     // refresh browser and go to favourites to see the new event after being refreshed.
