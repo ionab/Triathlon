@@ -77,13 +77,22 @@ class Main extends Component {
     request.open('POST', 'http://localhost:3001/api/favourites', true)
     request.setRequestHeader("Content-type", 'application/json')
     request.send(JSON.stringify(eventObject))
-    
+
+
+
+    // Im not sure this stuff is worth putting in but it seems to be the only way I can re-render?
+    // const favouriteIndex = event.target.value;
+    // const favourite = this.state.favourites[favouriteIndex];
+    // this.setState({selectedEvent: favourite})
+
+
+
     // part1
     // write the event object to the data base.
     // refresh browser and go to favourites to see the new event after being refreshed.
     // part2
     // re-render this component ^
-    // using setState we can then re0-render the web page
+    // using setState we can then re-render the web page
   }
 
 
