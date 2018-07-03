@@ -31,8 +31,18 @@ class singleAthlete extends React.Component{
   render(){
     return(
       <div>
-        {console.log(this.state)}
-        {/* <h1>{this.state.athlete.code}</h1> */}
+        {console.log(this.state.athlete)}
+        {/* <h1>{this.state.athlete.data.athlete_title}</h1>
+        <h2>{this.state.athlete.data.athlete_country_name}</h2>
+        <p>{this.state.athlete.data.athlete_gender}</p>
+        <img src={this.state.athlete.data.athlete_profile_image}/>
+        <p>{this.state.athlete.data.biography}</p>
+        <p>{this.state.athlete.data.coach}</p>
+        <p>{this.state.athlete.data.height}</p>
+        <p>{this.state.athlete.data.place_of_birth}</p> */}
+
+
+
       </div>
 
     )
