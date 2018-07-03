@@ -86,18 +86,7 @@ class Main extends Component {
     this.setState({
       favourites: this.state.favourites
     })
-    // part1
-    // write the event object to the data base.
-    // refresh browser and go to favourites to see the new event after being refreshed.
-    // part2
-    // re-render this component ^
-    // using setState we can then re0-render the web page
-
   }
-
-
-
-
   render() {
     // console.log(this.state.events);
     return (

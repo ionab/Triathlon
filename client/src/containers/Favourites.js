@@ -1,5 +1,7 @@
 import React from 'react';
 import Favourite from '../components/Favourite.js';
+import FavMap from "../components/favMap.js"
+
 
 const Favourites = (props) => {
 console.log(props, "props");
@@ -10,8 +12,11 @@ console.log(props, "props");
      )
   return (
   <div>
-      {console.log(props)}
-    <h1>Fav list</h1>
+      {/* {console.log(props)} */}
+      <div id="map">
+        <FavMap allEvents={props.favourites}/>
+      </div>
+    <h1>Favourites list</h1>
     <ul>{allFavourites}</ul>
   </div>
   )
