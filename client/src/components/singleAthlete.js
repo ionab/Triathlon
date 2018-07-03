@@ -5,14 +5,9 @@ class singleAthlete extends React.Component{
   constructor(props, {match}){
     super(props);
     this.state={
-      athlete: null
+      athlete: []
     }
-    this.getParams = this.getParams.bind(this);
-  }
 
-  getParams(props){
-    console.log(props.match.params.id);
-    {props.match.params.id}
   }
 
   componentDidMount(){
@@ -25,21 +20,21 @@ class singleAthlete extends React.Component{
       },
       mode: "cors"
     }).then(res => res.json())
-    .then(data => this.setState({athlete: data}))
+    .then(data => this.setState({athlete: data.data}))
  }
 
   render(){
     return(
       <div>
         {console.log(this.state.athlete)}
-        {/* <h1>{this.state.athlete.data.athlete_title}</h1>
-        <h2>{this.state.athlete.data.athlete_country_name}</h2>
-        <p>{this.state.athlete.data.athlete_gender}</p>
-        <img src={this.state.athlete.data.athlete_profile_image}/>
-        <p>{this.state.athlete.data.biography}</p>
-        <p>{this.state.athlete.data.coach}</p>
-        <p>{this.state.athlete.data.height}</p>
-        <p>{this.state.athlete.data.place_of_birth}</p> */}
+        <h1>{this.state.athlete.athlete_title}</h1>
+        <h2>{this.state.athlete.athlete_country_name}</h2>
+        <p>{this.state.athlete.athlete_gender}</p>
+        {/* <img src={this.state.data.athlete_profile_image}/> */}
+        <p>{this.state.athlete.biography}</p>
+        <p>{this.state.athlete.coach}</p>
+        <p>{this.state.athlete.height}</p>
+        <p>{this.state.athlete.place_of_birth}</p>
 
 
 
