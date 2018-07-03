@@ -4,13 +4,12 @@ import React from "react";
     return(
       <div className="rankingDetails">
         <ul>
-          <li>Ranking ID: {props.details.ranking_id}</li>
-          <li>Ranking Category: {props.details.ranking_cat_id}</li>
-          <li>Ranking Category Name: {props.details.ranking_cat_name}</li>
-          <li>Ranking Name: {props.details.ranking_name}</li>
-          <li>Region ID: {props.details.region_id}</li>
-          <li>Region Name: {props.details.region_name}</li>
-          <li>Week: {props.details.week}</li>
+          <li>Athlete Name: {props.details.athlete_title}</li>
+          <li>Postition: {props.details.position}</li>
+          <li>Splits: {props.details.splits[0]}, {props.details.splits[1]}, {props.details.splits[2]}, {props.details.splits[3]}, {props.details.splits[4]}</li>
+          <li>Total Time: {props.details.total_time}</li>
+          <img src="{props.details.athlete_profile_image}"/>
+          <img src="{props.details.athlete_flag}"/>
         </ul>
       </div>
     )

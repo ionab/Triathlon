@@ -48,7 +48,7 @@ class Main extends Component {
       mode: "cors"
     }).then(res => res.json())
     .then(data => this.setState({events: data}))
-    const rankingUrl = "https://api.triathlon.org/v1/rankings";
+    const rankingUrl = "https://api.triathlon.org/v1/events/90162/programs/270563/results?";
     fetch(rankingUrl, {
       credentials: 'same-origin',
       headers: {
