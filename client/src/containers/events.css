@@ -1,8 +1,9 @@
-.allFavourites{
-  display: flex;
-  text-align: center;
+.allEvents{
+  text-align: left;
   flex-wrap: wrap;
   margin-top: 0px;
   height: 800px;
   overflow: scroll;
 }
+button {
+width: 100%}

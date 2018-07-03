@@ -2,9 +2,8 @@ import React from 'react';
 import EventMap from "../components/eventMap.js"
 import Event from '../components/event.js'
 
-// get all events
-// send one event to server/back end
-// render list of events
+import './events.css'
+
 
 class Events extends React.Component{
   constructor(props){
@@ -57,6 +56,7 @@ class Events extends React.Component{
       </div>
     )
   }
+
 };
 
 export default Events;

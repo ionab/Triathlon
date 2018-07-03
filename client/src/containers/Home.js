@@ -1,6 +1,13 @@
 import React from 'react';
+import './home.css'
 
 const Home = (props) =>(
-  <h1>This is the main homepage</h1>
+  <body className="body">
+    <h1>Welcome to iTri</h1>
+    <p className="para">Here you can find out about triathlon events all around europe in 2018.<br/>
+    Add a favourite on the events page and view the details on the favourites page.
+
+  </p>
+  </body>
 );
 export default Home;
