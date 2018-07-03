@@ -21,6 +21,9 @@ class Main extends Component {
       favourites: []
     }
 
+    this.handleEventSelect = this.handleEventSelect.bind(this);
+    // this.complete = this.complete.bind()
+
   }
 
   componentDidMount(){
@@ -74,23 +77,16 @@ class Main extends Component {
     console.log("in handle event select", eventObject.event_title);
     // const result = [{event: eventObject}];
     const request = new XMLHttpRequest();
-    request.open('POST', 'http://localhost:3001/api/favourites', true)
-    request.setRequestHeader("Content-type", 'application/json')
-    request.send(JSON.stringify(eventObject))
+    request.open('POST', 'http://localhost:3001/api/favourites', true);
+    request.setRequestHeader("Content-type", 'application/json');
 
-    // Im not sure this stuff is worth putting in but it seems to be the only way I can re-render?
-    // const favouriteIndex = event.target.value;
-    // const favourite = this.state.favourites[favouriteIndex];
-    // this.setState({selectedEvent: favourite})
+    request.send(JSON.stringify(eventObject));
+    this.state.favourites.push(eventObject)
 
-    // part1
-    // write the event object to the data base.
-    // refresh browser and go to favourites to see the new event after being refreshed.
-    // part2
-    // re-render this component ^
-    // using setState we can then re-render the web page
+    this.setState({
+      favourites: this.state.favourites
+    })
   }
-
   render() {
     // console.log(this.state.events);
     return (
