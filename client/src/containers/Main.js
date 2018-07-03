@@ -78,14 +78,10 @@ class Main extends Component {
     request.setRequestHeader("Content-type", 'application/json')
     request.send(JSON.stringify(eventObject))
 
-
-
     // Im not sure this stuff is worth putting in but it seems to be the only way I can re-render?
     // const favouriteIndex = event.target.value;
     // const favourite = this.state.favourites[favouriteIndex];
     // this.setState({selectedEvent: favourite})
-
-
 
     // part1
     // write the event object to the data base.
@@ -94,8 +90,6 @@ class Main extends Component {
     // re-render this component ^
     // using setState we can then re-render the web page
   }
-
-
 
   render() {
     // console.log(this.state.events);
