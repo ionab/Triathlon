@@ -15,7 +15,7 @@ console.log(props, "props");
       <div id="map">
         <FavMap allEvents={props.favourites}/>
       </div>
-    <h1>Fav list</h1>
+    <h1>Favourites list</h1>
     <ul>{allFavourites}</ul>
   </div>
   )
