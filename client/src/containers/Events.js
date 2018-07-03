@@ -51,7 +51,7 @@ class Events extends React.Component{
         <h1>This is the Events homepage</h1>
         {/* {console.log(props.events.data)} */}
         <div id="map">
-          <EventMap allEvents={this.state.events} handleAddButtonClick={this.handleEventSelect} />
+          <EventMap allEvents={this.state.events.data} handleAddButtonClick={this.handleEventSelect} />
         </div>
         {allEvents}
       </div>
