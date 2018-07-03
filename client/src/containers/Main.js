@@ -18,20 +18,12 @@ class Main extends Component {
     this.state ={
       ranking: null,
       athletes: [],
-      favourites: []
     }
 
   }
 
   componentDidMount(){
-    const MongoUrl = 'http://localhost:3001/api/favourites';
-    fetch(MongoUrl, {
-      mode: "cors"
-    }).then(res => res.json()).then(favourites => this.setState(
-      {
-        favourites: favourites
-      }
-    ))
+
 
 
     const rankingUrl = "https://api.triathlon.org/v1/events/90162/programs/270563/results?";
@@ -70,9 +62,7 @@ class Main extends Component {
           <Route path="/ranking"
             render={() => <Ranking ranking={this.state.ranking} />}
           />
-          <Route path="/favourites"
-            render={() => <Favourites favourites={this.state.favourites}/>}
-          />
+          <Route path="/favourites" component={Favourites} />
           <Route path="/athletes/:id"
             component={Athletes}
           />

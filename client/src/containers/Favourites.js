@@ -5,32 +5,41 @@ import './favouritesList.css'
 
 // get all favourites
 
-class Favorites extends React.Component{
+class Favourites extends React.Component{
   constructor(props){
-    super(props)
+    super(props);
+    this.state = {
+      favourites: []
+    }
+  }
+  componentDidMount(){
+    const MongoUrl = 'http://localhost:3001/api/favourites';
+    fetch(MongoUrl, {
+      mode: "cors"
+    }).then(res => res.json()).then(favourites => this.setState(
+      {
+        favourites: favourites
+      }
+    ))
+  }
+
+  render(){
+    if (!this.state.favourites) return null;
+    const allFavourites = this.state.favourites.map(favourite =>
+        <Favourite favourite={favourite} />
+       )
+    return(<div>
+        <div id="map">
+          <FavMap allEvents={this.state.favourites}/>
+        </div>
+
+      <h1>Favourites list</h1>
+        <div className="allFavourites">
+      <ul>{allFavourites}</ul>
+      </div>
+    </div>)
   }
 }
 
-const Favourites = (props) => {
-console.log(props, "props");
-  if (!props.favourites) return null;
-  console.log('here', props.favourites);
-  const allFavourites = props.favourites.map(favourite =>
-      <Favourite favourite={favourite} />
-     )
-  return (
-  <div>
-      {/* {console.log(props)} */}
-      <div id="map">
-        <FavMap allEvents={props.favourites}/>
-      </div>
-
-    <h1>Favourites list</h1>
-      <div className="allFavourites">
-    <ul>{allFavourites}</ul>
-    </div>
-  </div>
-  )
-};
 
 export default Favourites;
