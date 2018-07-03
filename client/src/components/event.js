@@ -3,7 +3,7 @@ import React from "react";
 const Event = function(props){
   return(
     <div>
-      <p>{props.event.event_country}</p>
+      <p>{props.event.event_title}</p>
     </div>
   )
 }

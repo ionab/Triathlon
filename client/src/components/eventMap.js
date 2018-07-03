@@ -14,17 +14,7 @@ class EventMap extends React.Component {
      lng: 11.061859,
      zoom: 3.5
    }
-   // this.handleAddButtonClick = this.handleAddButtonClick.bind(this);
  }
- //
- // const createAddButton = document.querySelector("#heart-button");
- // createAddButton.addEventListener('click', handleAddButtonClick);
-
-//   handleAddButtonClick(event){
-// const eventObject = JSON.parse(event.target.value);
-//
-//
-//  }
 
  render() {
    const position = [this.state.lat, this.state.lng];
