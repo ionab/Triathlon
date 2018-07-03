@@ -6,6 +6,7 @@ import Athletes from "./Athletes";
 import NavBar from "./NavBar";
 import Favourites from "./Favourites";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
+import "./main.css";
 // import eventMap from "./eventMap";
 
 
@@ -35,8 +36,6 @@ class Main extends Component {
         favourites: favourites
       }
     ))
-
-
 
     const eventsUrl = "https://api.triathlon.org/v1/events?per_page=200&start_date=2018-01-01&end_date=2022-01-01&region_id=10";
     fetch(eventsUrl, {
