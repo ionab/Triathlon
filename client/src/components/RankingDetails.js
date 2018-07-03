@@ -10,6 +10,8 @@ import React from "react";
           <li>Total Time: {props.details.total_time}</li>
           <img src="{props.details.athlete_profile_image}"/>
           <img src="{props.details.athlete_flag}"/>
+          <a href={"/athlete/" + props.details.athlete_id} >Athlete Details</a>
+
         </ul>
       </div>
     )
