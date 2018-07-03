@@ -4,6 +4,7 @@ import Events from "./Events";
 import Ranking from "./Ranking";
 import Athletes from "./Athletes";
 import NavBar from "./NavBar";
+import singleAthlete from '../components/singleAthlete'
 import Favourites from "./Favourites";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import "./main.css";
@@ -23,9 +24,7 @@ class Main extends Component {
           <Route path="/events" component={Events} />
           <Route path="/ranking" component={Ranking} />
           <Route path="/favourites" component={Favourites} />
-          {/* <Route path="/athletes/:id"
-            component={Athletes}
-          /> */}
+          <Route path="/athletes/:id" component={singleAthlete} />
         </React.Fragment>
       </Router>
     )

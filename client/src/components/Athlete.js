@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const Athlete = function(props){
   return(
     <div>
