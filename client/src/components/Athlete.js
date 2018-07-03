@@ -5,7 +5,6 @@ const Athlete = function(props){
     <div>
       <p>{props.athlete.athlete_title}</p>
     </div>
-
       )
     }
 export default Athlete;

@@ -9,7 +9,7 @@ import Favourites from "./Favourites";
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import "./main.css";
 // import eventMap from "./eventMap";
-
+let ComponentWithRegex;
 class Main extends Component {
   constructor(props){
     super(props);
@@ -24,11 +24,22 @@ class Main extends Component {
           <Route path="/events" component={Events} />
           <Route path="/ranking" component={Ranking} />
           <Route path="/favourites" component={Favourites} />
-          <Route path="/athletes/:id" component={singleAthlete} />
+          <Route path="/athlete/:id" component={singleAthlete}/>
         </React.Fragment>
       </Router>
     )
   }
+//   Child = ({ match }) => (
+//   <div>
+//     <h3>ID: {match.params.id}</h3>
+//   </div>
+// );
+//
+// singleAthlete = ({ match }) => (
+//   <div>
+//     <h3>{match.params.id}</h3>
+//   </div>
+// );
 }
 
 export default Main;

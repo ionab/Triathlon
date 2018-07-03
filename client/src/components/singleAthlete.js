@@ -2,18 +2,21 @@ import React from 'react';
 let getParams;
 
 class singleAthlete extends React.Component{
-  constructor(props){
+  constructor(props, {match}){
     super(props);
     this.state={
-      athlete: {}
+      athlete: null
     }
+    this.getParams = this.getParams.bind(this);
   }
 
-  getParams({match}){
-    {match.params.id}
+  getParams(props){
+    console.log(props.match.params.id);
+    {props.match.params.id}
   }
+
   componentDidMount(){
-    const athleteUrl = "https://api.triathlon.org/v1/athlete/" + getParams();
+    const athleteUrl = "https://api.triathlon.org/v1/athletes/" + this.props.match.params.id;
     fetch(athleteUrl, {
       credentials: 'same-origin',
       headers: {
@@ -28,7 +31,8 @@ class singleAthlete extends React.Component{
   render(){
     return(
       <div>
-        <p>redering page</p>
+        {console.log(this.state)}
+        {/* <h1>{this.state.athlete.code}</h1> */}
       </div>
 
     )

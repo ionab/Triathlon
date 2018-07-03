@@ -1,5 +1,7 @@
 import React from "react";
 
+
+
  const RankingDetails = function(props){
     return(
       <div className="rankingDetails">
@@ -11,7 +13,6 @@ import React from "react";
           <img src="{props.details.athlete_profile_image}"/>
           <img src="{props.details.athlete_flag}"/>
           <a href={"/athlete/" + props.details.athlete_id} >Athlete Details</a>
-
         </ul>
       </div>
     )
