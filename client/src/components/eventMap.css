@@ -1,11 +1,15 @@
 #map {
   height: 700px;
-  width: 55% ;
+  width: 55%;
   position: relative;
   display: inline-block;
   float: right;
-  padding: 5%;
+  margin: 2%;
+  padding: 0px;
+  border: 1px
+  solid black;
 }
+
 #container{
   height: 700px;
   width: 100%;

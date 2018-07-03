@@ -11,7 +11,7 @@ const Events = (props) => {
 
   return (
     <div>
-      <h1>This is the Events homepage</h1>
+      <h1>iTri European Events 2018</h1>
       {console.log(props.events.data)}
       <div id="map">
         <EventMap allEvents={props.events.data} handleAddButtonClick={props.onFavouriteClicked} />

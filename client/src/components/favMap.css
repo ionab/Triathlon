@@ -1,10 +1,10 @@
 #map {
-  height: 700px;
-  width: 55% ;
+  height: 700px;;
+  width: 55%;
   position: relative;
   display: inline-block;
   float: right;
-  margin: 5%;
+  margin: 2%;
   padding: 0px;
   border: 1px solid black;
 }

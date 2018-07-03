@@ -1,7 +1,9 @@
 .allEvents{
-  text-align: center;
+  text-align: left;
   flex-wrap: wrap;
   margin-top: 0px;
   height: 800px;
   overflow: scroll;
 }
+button {
+width: 100%}

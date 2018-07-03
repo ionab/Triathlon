@@ -9,9 +9,6 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import "./main.css";
 // import eventMap from "./eventMap";
 
-
-
-
 class Main extends Component {
   constructor(props){
     super(props);
