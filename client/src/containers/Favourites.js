@@ -3,6 +3,13 @@ import Favourite from '../components/Favourite.js';
 import FavMap from "../components/favMap.js"
 import './favouritesList.css'
 
+// get all favourites
+
+class Favorites extends React.Component{
+  constructor(props){
+    super(props)
+  }
+}
 
 const Favourites = (props) => {
 console.log(props, "props");
