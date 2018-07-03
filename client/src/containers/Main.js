@@ -9,117 +9,27 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import "./main.css";
 // import eventMap from "./eventMap";
 
-
-
-
 class Main extends Component {
   constructor(props){
     super(props);
-    this.state ={
-      events: null,
-      ranking: null,
-      athletes: [],
-      favourites: []
-    }
-
-    this.handleEventSelect = this.handleEventSelect.bind(this);
-    // this.complete = this.complete.bind()
-
   }
 
-  componentDidMount(){
-    const MongoUrl = 'http://localhost:3001/api/favourites';
-    fetch(MongoUrl, {
-      mode: "cors"
-    }).then(res => res.json()).then(favourites => this.setState(
-      {
-        favourites: favourites
-      }
-    ))
-
-    const eventsUrl = "https://api.triathlon.org/v1/events?per_page=200&start_date=2018-01-01&end_date=2022-01-01&region_id=10";
-    fetch(eventsUrl, {
-      credentials: 'same-origin',
-      headers: {
-        apikey: "f199550ffbfc27ac32747b2258e49294",
-        "content-type": "application/json"
-      },
-      mode: "cors"
-    }).then(res => res.json())
-    .then(data => this.setState({events: data}))
-    const rankingUrl = "https://api.triathlon.org/v1/events/90162/programs/270563/results?";
-    fetch(rankingUrl, {
-      credentials: 'same-origin',
-      headers: {
-        apikey: "f199550ffbfc27ac32747b2258e49294",
-        "content-type": "application/json"
-      },
-      mode: "cors"
-    }).then(res => res.json())
-    .then(data => this.setState({ranking: data}))
-
-
-    const athletesUrl = "https://api.triathlon.org/v1/athletes?per_page=100";
-    fetch(athletesUrl, {
-      credentials: 'same-origin',
-      headers: {
-        apikey: "f199550ffbfc27ac32747b2258e49294",
-        "content-type": "application/json"
-      },
-      mode: "cors"
-    }).then(res => res.json())
-    .then(data => this.setState({athletes: data}))
-  }
-
-  handleEventSelect(event){
-    const eventObject = JSON.parse(event.target.value);
-    console.log("in handle event select", eventObject.event_title);
-    // const result = [{event: eventObject}];
-    const request = new XMLHttpRequest();
-    request.open('POST', 'http://localhost:3001/api/favourites', true);
-    request.setRequestHeader("Content-type", 'application/json');
-
-    request.send(JSON.stringify(eventObject));
-    this.state.favourites.push(eventObject)
-
-    this.setState({
-      favourites: this.state.favourites
-    })
-  }
   render() {
-    // console.log(this.state.events);
     return (
       <Router>
         <React.Fragment>
           <NavBar />
           <Route exact path="/" component={Home}/>
-          <Route path="/events"
-          render={() => <Events  onFavouriteClicked={this.handleEventSelect} events={this.state.events}
-          />}
-        />
-        <Route path="/ranking"
-        render={() => <Ranking ranking={this.state.ranking}
-        />}
-      />
-      <Route path="/athletes"
-      render={() => <Athletes athletes={this.state.athletes}
-      />}
-    />
-    <Route path="/favourites"
-    render={() => <Favourites  favourites={this.state.favourites}
-    />}
-  />
-</React.Fragment>
-</Router>
-);
+          <Route path="/events" component={Events} />
+          <Route path="/ranking" component={Ranking} />
+          <Route path="/favourites" component={Favourites} />
+          {/* <Route path="/athletes/:id"
+            component={Athletes}
+          /> */}
+        </React.Fragment>
+      </Router>
+    )
+  }
 }
-
-
-
-}
-
-
-
-
 
 export default Main;

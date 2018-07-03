@@ -6,7 +6,6 @@ import './eventMap.css'
 
 
 class EventMap extends React.Component {
-
  constructor(props) {
    super(props)
    this.state = {
@@ -14,17 +13,7 @@ class EventMap extends React.Component {
      lng: 11.061859,
      zoom: 3.5
    }
-   // this.handleAddButtonClick = this.handleAddButtonClick.bind(this);
  }
- //
- // const createAddButton = document.querySelector("#heart-button");
- // createAddButton.addEventListener('click', handleAddButtonClick);
-
-//   handleAddButtonClick(event){
-// const eventObject = JSON.parse(event.target.value);
-//
-//
-//  }
 
  render() {
    const position = [this.state.lat, this.state.lng];
@@ -43,11 +32,10 @@ class EventMap extends React.Component {
              <p>{event.event_date}</p>
              <p>{event.event_venue}</p>
              <img src={event.event_flag}/>
-             <div id="heart">
-               <button onClick={this.props.handleAddButtonClick} id="heart-button" value={JSON.stringify(event)}>favourite button</button>
+              <div id="heart">
+                <button onClick={this.props.handleAddButtonClick} id="heart-button" value={JSON.stringify(event)}>favourite button</button>
+              </div>
              </div>
-             </div>
-
            </Popup>
          </Marker>
        )}
