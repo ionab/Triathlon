@@ -1,5 +1,6 @@
 import React from 'react';
 import RankingDetails from '../components/RankingDetails.js'
+import "./Ranking.css";
 
 
 class Ranking extends React.Component{
@@ -29,7 +30,7 @@ class Ranking extends React.Component{
     )
     return(
       <div>
-        <h2>2015 ITU World Triathlon Gold Coast Results</h2>
+        <h2 id="header">2015 ITU World Triathlon Gold Coast Results</h2>
         {allRankings}
       </div>
 
