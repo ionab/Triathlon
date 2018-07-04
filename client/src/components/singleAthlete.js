@@ -33,9 +33,9 @@ class singleAthlete extends React.Component{
       </div>
       <div className="athlete">
         {console.log(this.state.athlete)}
-        <div id="athlete_details"> 
+        <div id="athlete_details">
         <h1>{this.state.athlete.athlete_title}</h1>
-        <h2><b>Country: </b>{this.state.athlete.athlete_country_name}</h2>
+        <p><b>Country: </b>{this.state.athlete.athlete_country_name}</p>
         <p><b>Place of Birth: </b>{this.state.athlete.place_of_birth}</p>
         <p><b>Gender: </b>{this.state.athlete.athlete_gender}</p>
         <p><b>Biography: </b> <br/>{this.state.athlete.biography}</p>
