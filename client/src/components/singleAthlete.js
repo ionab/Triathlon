@@ -35,9 +35,6 @@ class singleAthlete extends React.Component{
         <p>{this.state.athlete.coach}</p>
         <p>{this.state.athlete.height}</p>
         <p>{this.state.athlete.place_of_birth}</p>
-
-
-
       </div>
 
     )
