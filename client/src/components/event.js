@@ -1,9 +1,10 @@
 import React from "react";
+import "./event.css"
 
 const Event = function(props){
   return(
     <div>
-      <p>{props.event.event_title}</p>
+      <a href={props.event.event_listing}>{props.event.event_title}</a>
     </div>
   )
 }

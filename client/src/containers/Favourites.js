@@ -31,7 +31,7 @@ class Favourites extends React.Component{
           <FavMap allEvents={this.state.favourites}/>
         </div>
 
-      <h1>iTri Favourite Events</h1>
+      <h1>i-Tri Favourite Events</h1>
         <div className="allFavourites">
       <ul>{allFavourites}</ul>
       </div>
