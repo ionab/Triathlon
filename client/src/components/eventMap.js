@@ -33,8 +33,9 @@ class EventMap extends React.Component {
              <p>{event.event_venue}</p>
              <img src={event.event_flag}/>
               <div id="heart">
-                <button onClick={this.props.handleAddButtonClick} id="heart-button" value={JSON.stringify(event)}>favourite button</button>
+                <button onClick={this.props.handleAddButtonClick} id="heart-button" value={JSON.stringify(event)}>.</button>
               </div>
+              
              </div>
            </Popup>
          </Marker>
