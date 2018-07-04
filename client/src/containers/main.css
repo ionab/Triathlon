@@ -1,0 +1,11 @@
+.App {
+  background-image: url("http://humber-triathletes.co.uk/images/vii_triatlon_de_elche_final-2.jpg?crc=126320256");
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  background-position: absolute;
+  background: absolute;
+  background-attachment: fixed;
+  background-color: grey;
+  background-blend-mode: screen;
+}

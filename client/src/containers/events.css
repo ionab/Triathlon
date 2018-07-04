@@ -1,0 +1,17 @@
+.allEvents{
+  text-align: left;
+  /* flex-wrap: wrap; */
+  margin-top: 0px;
+  height: 800px;
+  overflow: scroll;
+
+}
+
+p{
+  margin-left: 15px;
+  text-shadow: 10px white;
+}
+
+h4{
+  margin-left: 15px;
+}

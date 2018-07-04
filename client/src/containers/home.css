@@ -1,0 +1,21 @@
+.paragraph {
+  text-shadow: grey;
+  margin-bottom: 400px;
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.header {
+  font-family: 'Anton', sans-serif;
+  text-align: center;
+  font-size: 9em;
+  justify-content: center;
+  width: 100%;
+}
+.body {
+  text-align: center;
+  height: 100%;
+  width: 100%;
+}

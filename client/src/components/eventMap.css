@@ -1,0 +1,69 @@
+#map {
+  height: 700px;
+  width: 55%;
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin: 2%;
+  padding: 0px;
+  border: 1px
+  solid black;
+}
+
+#container{
+  height: 700px;
+  width: 100%;
+}
+
+.leaflet-container {
+  height: 100%;
+}
+
+#heart-button {
+  float: left;
+  margin: 10px;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  background-color: red;
+  padding: 0;  /*added code*/
+  border: none;  /*added code*/
+  outline:none;
+}
+
+#heart-button:before,
+#heart-button:after {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  content: '';
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  background-color: red;
+}
+
+#heart-button:before {
+  bottom: 0px;
+  left: -5px;
+}
+
+#heart-button:after {
+  top: -5px;
+  right: 0px;
+}
+#heart-button:active,
+#heart-button:active:after,
+#heart-button:active:before {
+  background-color: #e80202;
+  box-shadow: inset 1px 1px 1px #c50b0b;
+}
+
+#heart{
+  float: right;
+}
