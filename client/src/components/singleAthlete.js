@@ -1,5 +1,7 @@
 import React from 'react';
+import './singleAthlete.css'
 let getParams;
+
 
 class singleAthlete extends React.Component{
   constructor(props, {match}){
@@ -26,16 +28,22 @@ class singleAthlete extends React.Component{
   render(){
     return(
       <div>
-        {console.log(this.state.athlete)}
-        <h1>{this.state.athlete.athlete_title}</h1>
-        <h2>{this.state.athlete.athlete_country_name}</h2>
-        <p>{this.state.athlete.athlete_gender}</p>
-        {/* <img src={this.state.data.athlete_profile_image}/> */}
-        <p>{this.state.athlete.biography}</p>
-        <p>{this.state.athlete.coach}</p>
-        <p>{this.state.athlete.height}</p>
-        <p>{this.state.athlete.place_of_birth}</p>
+      <div className="image">
+      <img id='ath-image' src={this.state.athlete.athlete_profile_image}/>
       </div>
+      <div className="athlete">
+        {console.log(this.state.athlete)}
+        <div id="athlete_details"> 
+        <h1>{this.state.athlete.athlete_title}</h1>
+        <h2><b>Country: </b>{this.state.athlete.athlete_country_name}</h2>
+        <p><b>Place of Birth: </b>{this.state.athlete.place_of_birth}</p>
+        <p><b>Gender: </b>{this.state.athlete.athlete_gender}</p>
+        <p><b>Biography: </b> <br/>{this.state.athlete.biography}</p>
+        <p>Coach: {this.state.athlete.coach}</p>
+        <p>Athlete Height: {this.state.athlete.height}</p>
+        </div>
+      </div>
+    </div>
 
     )
   }
