@@ -47,8 +47,8 @@ class Events extends React.Component{
 
     return (
       <div>
-        <h1>This is the Events homepage</h1>
-        {/* {console.log(props.events.data)} */}
+        <h1>2018 European Events</h1>
+        <h4>Click the heart in the pop up to add an event to your favourite lists</h4>
         <div id="map">
           <EventMap allEvents={this.state.events.data} handleAddButtonClick={this.handleEventSelect} />
         </div>

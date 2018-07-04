@@ -28,7 +28,7 @@ class Athletes extends React.Component{
     // console.log(this.state.match.params.id)
     return (
       <div>
-        <h1>This is the Athletes homepage</h1>
+        <h1></h1>
         <ul>
           {allAthletes}
         </ul>
